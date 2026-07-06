@@ -1,18 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Front Page Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leading University Front Page Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
 
-<h1>🎓 University Front Page Generator</h1>
+<div class="container">
 
-<p>Welcome Sourob!</p>
+<h1>Leading University Front Page Generator</h1>
 
-<button>Generate PDF</button>
+<div class="form">
+
+<input type="text" id="courseTitle" placeholder="Course Title">
+
+<input type="text" id="courseCode" placeholder="Course Code">
+
+<input type="text" id="labTitle" placeholder="Lab / Assignment Title">
+
+<input type="text" id="teacherName" placeholder="Teacher Name">
+
+<input type="text" id="designation" placeholder="Designation">
+
+<input type="text" id="faculty" placeholder="Faculty">
+
+<input type="text" id="studentName" placeholder="Student Name">
+
+<input type="text" id="batch" placeholder="Batch">
+
+<input type="text" id="section" placeholder="Section">
+
+<input type="text" id="studentID" placeholder="Student ID">
+
+<input type="date" id="date">
+
+<button onclick="generateFrontPage()">
+Generate Front Page
+</button>
+
+<button onclick="downloadPDF()">
+Download PDF
+</button>
+
+</div>
+
+<div id="frontPage">
+
+<div class="logo">
+
+<img src="logo.png">
+
+</div>
+
+<h2>Leading University</h2>
+
+<h3>Department of Computer Science and Engineering</h3>
+
+<hr>
+
+<p><b>Course Title :</b> <span id="pCourseTitle"></span></p>
+
+<p><b>Course Code :</b> <span id="pCourseCode"></span></p>
+
+<p><b>Lab Title :</b> <span id="pLabTitle"></span></p>
+
+<br>
+
+<h3>Submitted To</h3>
+
+<p id="pTeacher"></p>
+
+<p id="pDesignation"></p>
+
+<p id="pFaculty"></p>
+
+<br>
+
+<h3>Submitted By</h3>
+
+<table>
+
+<tr>
+<td>Name</td>
+<td id="pStudent"></td>
+</tr>
+
+<tr>
+<td>Department</td>
+<td>CSE</td>
+</tr>
+
+<tr>
+<td>Batch</td>
+<td id="pBatch"></td>
+</tr>
+
+<tr>
+<td>Section</td>
+<td id="pSection"></td>
+</tr>
+
+<tr>
+<td>ID</td>
+<td id="pID"></td>
+</tr>
+
+</table>
+
+<br>
+
+<p id="pDate"></p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
