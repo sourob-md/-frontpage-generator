@@ -2,109 +2,249 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Times New Roman", serif;
+    font-family:"Times New Roman", Times, serif;
 }
 
 body{
-    background:#f2f2f2;
-    padding:20px;
+    background:#ececec;
+    padding:30px;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
+.wrapper{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-h1{
-    text-align:center;
-    margin-bottom:20px;
-    color:#003366;
-}
-
-.form{
-    background:white;
+.form-panel{
+    width:350px;
+    background:#fff;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.15);
-    margin-bottom:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-.form input{
+.form-panel h2{
+    text-align:center;
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.form-panel input{
     width:100%;
     padding:12px;
-    margin:8px 0;
-    border:1px solid #ccc;
+    margin-bottom:12px;
+    border:1px solid #bbb;
     border-radius:5px;
     font-size:16px;
 }
 
-button{
+.form-panel button{
     width:100%;
-    padding:14px;
-    margin-top:12px;
+    padding:13px;
+    margin-top:10px;
     border:none;
     border-radius:5px;
     background:#003366;
     color:white;
     font-size:17px;
     cursor:pointer;
+    transition:.3s;
 }
 
-button:hover{
-    background:#0055aa;
+.form-panel button:hover{
+    background:#0059b3;
 }
+
+/* ======================= */
+/* A4 FRONT PAGE */
+/* ======================= */
 
 #frontPage{
+
     width:210mm;
     min-height:297mm;
+
     background:white;
+
+    padding:25mm;
+
     margin:auto;
-    padding:30mm 20mm;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
+
+    box-shadow:0 0 15px rgba(0,0,0,.25);
+
+    color:#000;
+
 }
 
 .logo{
+
+    display:block;
+
+    width:120px;
+
+    margin:0 auto 15px;
+
+}
+
+#frontPage h1{
+
     text-align:center;
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
 }
 
-.logo img{
-    width:110px;
-    height:auto;
+#frontPage h2{
+
+    text-align:center;
+
+    font-size:22px;
+
+    margin-bottom:35px;
+
 }
 
-#frontPage h2,
 #frontPage h3{
-    text-align:center;
-    margin-top:10px;
-}
 
-hr{
-    margin:20px 0;
+    text-align:center;
+
+    margin:25px 0 15px;
+
 }
 
 #frontPage p{
+
     font-size:18px;
-    line-height:1.8;
+
+    line-height:2;
+
 }
 
 table{
+
     width:100%;
+
     border-collapse:collapse;
-    margin-top:10px;
+
+    margin-top:15px;
+
 }
 
 table td{
+
     border:1px solid black;
-    padding:10px;
+
+    padding:12px;
+
     font-size:17px;
+
 }
 
-@media(max-width:768px){
+table td:first-child{
+
+    width:35%;
+
+    font-weight:bold;
+
+}
+
+/* Print */
+
+@media print{
+
+body{
+
+background:white;
+
+padding:0;
+
+}
+
+.form-panel{
+
+display:none;
+
+}
+
+.wrapper{
+
+display:block;
+
+}
 
 #frontPage{
-    width:100%;
-    min-height:auto;
-    padding:20px;
+
+box-shadow:none;
+
+margin:0;
+
+width:210mm;
+
+height:297mm;
+
+page-break-after:always;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.wrapper{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+#frontPage{
+
+width:100%;
+
+min-height:auto;
+
+padding:20px;
+
+}
+
+.logo{
+
+width:90px;
+
+}
+
+#frontPage h1{
+
+font-size:24px;
+
+}
+
+#frontPage h2{
+
+font-size:18px;
+
+}
+
+#frontPage p{
+
+font-size:16px;
+
+}
+
+table td{
+
+font-size:15px;
+
+padding:8px;
+
 }
 
 }
